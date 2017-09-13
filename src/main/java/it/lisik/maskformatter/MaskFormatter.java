@@ -1,11 +1,5 @@
 package it.lisik.maskformatter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.IntStream;
-
 import static it.lisik.maskformatter.MaskingResult.failed;
 import static it.lisik.maskformatter.MaskingResult.success;
 
@@ -35,6 +29,20 @@ public class MaskFormatter {
         }
 
         return success(output);
+    }
+
+    public String getPlaceholderMask() {
+        final StringBuilder builder = new StringBuilder(mask.getElements().size());
+
+        for (MaskElement element : mask.getElements()) {
+            if (element.isLiteral()) {
+                builder.append(((MaskLiteral) element).getCharacter());
+            } else {
+                builder.append(placeholderCharacter);
+            }
+        }
+
+        return builder.toString();
     }
 
     private String buildMaskedOutput(final String input) {
@@ -68,19 +76,5 @@ public class MaskFormatter {
 
     private int calculateTotalInputLength(final String input) {
         return input.length() + mask.getLiteralsCount();
-    }
-
-    public String getPlaceholderMask() {
-        final StringBuilder builder = new StringBuilder(mask.getElements().size());
-
-        for (MaskElement element : mask.getElements()) {
-            if (element.isLiteral()) {
-                builder.append(((MaskLiteral) element).getCharacter());
-            } else {
-                builder.append(placeholderCharacter);
-            }
-        }
-
-        return builder.toString();
     }
 }

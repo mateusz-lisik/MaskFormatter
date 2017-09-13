@@ -9,6 +9,14 @@ public class MaskingResult {
         this.text = text;
     }
 
+    static MaskingResult failed(final String text) {
+        return new MaskingResult(false, text);
+    }
+
+    static MaskingResult success(final String text) {
+        return new MaskingResult(true, text);
+    }
+
     public String getText() {
         return text;
     }
@@ -16,13 +24,5 @@ public class MaskingResult {
     public boolean isValid() {
 
         return valid;
-    }
-
-    static MaskingResult failed(final String text) {
-        return new MaskingResult(false, text);
-    }
-
-    static MaskingResult success(final String text) {
-        return new MaskingResult(true, text);
     }
 }

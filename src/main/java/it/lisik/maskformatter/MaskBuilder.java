@@ -1,6 +1,8 @@
 package it.lisik.maskformatter;
 
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class MaskBuilder {
@@ -13,15 +15,6 @@ public class MaskBuilder {
         elements.add(new UppercaseLetterElement());
     }
 
-    private MaskElement getElement(char c) {
-        for (MaskElement element : elements) {
-            if (!element.getSymbol().equals(c)) continue;
-            return element;
-        }
-
-        return new MaskLiteral(c);
-    }
-
     public static Mask build(final String pattern) {
         final MaskBuilder builder = new MaskBuilder();
 
@@ -30,5 +23,14 @@ public class MaskBuilder {
                 .collect(Collectors.toList());
 
         return new Mask(elements);
+    }
+
+    private MaskElement getElement(char c) {
+        for (MaskElement element : elements) {
+            if (!element.getSymbol().equals(c)) continue;
+            return element;
+        }
+
+        return new MaskLiteral(c);
     }
 }

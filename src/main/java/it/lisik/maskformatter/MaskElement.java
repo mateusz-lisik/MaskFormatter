@@ -6,5 +6,6 @@ public interface MaskElement {
     }
 
     Character getSymbol();
+
     boolean validate(Character character);
 }
