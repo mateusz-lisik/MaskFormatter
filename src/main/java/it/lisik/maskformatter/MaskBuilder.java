@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class MaskBuilder {
-    private Set<MaskElement> elements = new LinkedHashSet<>();
+    private final Set<MaskElement> elements = new LinkedHashSet<>();
 
     private MaskBuilder() {
         elements.add(new NumberElement());
