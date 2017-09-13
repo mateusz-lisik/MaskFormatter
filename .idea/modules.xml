@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maskformatter.iml" filepath="$PROJECT_DIR$/.idea/modules/maskformatter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maskformatter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/maskformatter_main.iml" group="maskformatter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maskformatter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/maskformatter_test.iml" group="maskformatter" />
+    </modules>
+  </component>
+</project>
