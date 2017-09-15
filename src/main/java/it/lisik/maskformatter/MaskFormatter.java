@@ -45,6 +45,18 @@ public class MaskFormatter {
         return builder.toString();
     }
 
+    public Character getPlaceholderCharacter() {
+        return placeholderCharacter;
+    }
+
+    public boolean isAutoPlaceLiterals() {
+        return autoPlaceLiterals;
+    }
+
+    public Mask getMask() {
+        return mask;
+    }
+
     private String buildMaskedOutput(final String input) {
         final StringBuilder builder = new StringBuilder(mask.getLength());
         int missedLiterals = 0;
